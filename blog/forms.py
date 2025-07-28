@@ -5,3 +5,4 @@ class EditForm(forms.ModelForm):
     class Meta:
         model=ArticleModel
         fields="__all__"
+        
