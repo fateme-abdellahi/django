@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}my article{%endblock%}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/article.css"%}">
+{% endblock%}
+
+{% block content %}
+<div class="center-wrapper">
+      <div class="article">
+  <div class="article-title">{{ article.title }}</div>
+  <div class="article-content">{{ article.content }}</div>
+  <div class="article-date">{{ article.date }}</div>
+</div>
+</div>
+{%endblock%}

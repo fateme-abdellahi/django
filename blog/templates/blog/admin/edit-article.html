@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}edit article{%endblock%}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/admin/article-form.css"%}">
+{% endblock%}
+
+{% block content %}
+    <div class="form-container">
+  <form class="article-form" method="POST" action="{% url "admin-article-edit" article.id %}">
+    {% csrf_token %}
+    <h2>Update Article</h2>
+    <input name="title" type="text" placeholder="Article Title" required value="{{article.title}}">
+    <div>{{errors.title}}<div>
+    
+    <input name="date" type="date" required value="{{article.date|date:'Y-m-d'}}">
+    <div>{{errors.date}}<div>
+
+    <textarea name="content" rows="8" placeholder="Content" required>{{article.content}}</textarea>
+    <div>{{errors.content}}<div>
+
+    <button type="submit">Update</button>
+  </form>
+</div>
+{%endblock%}

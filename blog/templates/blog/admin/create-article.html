@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}create article{%endblock%}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/admin/article-form.css"%}">
+{% endblock%}
+
+{% block content %}
+    <div class="form-container">
+  <form class="article-form" method="POST" action="{% url "admin-article-create" %}">
+    {% csrf_token %}
+    <h2>New Article</h2>
+    <input name="title" type="text" placeholder="Article Title" required>
+    <div>{{errors.title}}<div>
+    
+    <input name="date" type="date" required>
+    <div>{{errors.date}}<div>
+
+    <textarea name="content" rows="8" placeholder="Content" required></textarea>
+    <div>{{errors.content}}<div>
+
+    <button type="submit">Publish</button>
+  </form>
+</div>
+{%endblock%}

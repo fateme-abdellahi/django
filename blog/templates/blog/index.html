@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}home{%endblock%}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css"%}">
+{% endblock%}
+
+{% block content %}
+
+  <div class="blog-container">
+  <div class="blog-title">Personal Blog</div>
+
+  {% for article in articles %}
+    <a href={% url "article" article.id %} class="article-link">
+      <div class="article">
+        <div class="article-title">{{ article.title }}</div>
+        <div class="article-date">{{ article.date }}</div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+{%endblock%}
