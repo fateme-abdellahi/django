@@ -17,10 +17,11 @@ def register(request):
             user=form.save()
             login(request,user)
             return redirect('index')
-        return render(request,"registration/register.html",{"errors":form.errors})
+        return render(request,"registration/register.html",{"data":form.data,"errors":form.errors})
 
 class Login(LoginView):
     redirect_authenticated_user=True
     def get_success_url(self):
+        if self.request.user.is_staff:
+            return reverse('admin-page')
         return reverse('index')
-    

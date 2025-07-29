@@ -1,0 +1,22 @@
+.article-action-button{
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.article-action-button__edit{
+    background-color: #08adad;
+}
+
+.article-action-button__edit:hover{
+    background-color: #068686;
+}
+
+.article-action-button__delete{
+    background-color: #b41729;
+}
+
+.article-action-button__delete:hover{
+    background-color: #8e0414;
+}

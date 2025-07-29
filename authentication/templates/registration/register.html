@@ -14,12 +14,12 @@
             <h2>Create an Account</h2>
 
             <div class="auth-input-container">
-                <input type="text" name="username" placeholder="Username" required>
+                <input type="text" name="username" placeholder="Username" value="{{data.username}}" required>
                 <div class="auth-error">{{errors.username}}</div>
             </div>
 
             <div class="auth-input-container">
-                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="email" name="email" placeholder="Email Address" value="{{data.email}}" required>
                 <div class="auth-error">{{errors.email}}</div>
                 {%if email_exists%}
                     <div class="auth-error"><ul class='errorlist'>email already exists</ul><div>
@@ -27,12 +27,12 @@
             </div>
 
             <div class="auth-input-container">
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" value="{{data.password}}" required>
                 <div class="auth-error">{{errors.password}}</div>
             </div>
             
             <div class="auth-input-container">
-                <input type="password" name="password2" placeholder="Confirm Password" required>
+                <input type="password" name="password2" placeholder="Confirm Password" value="{{data.password2}}" required>
                 <div class="auth-error">{{errors.password2}}</div>
             </div>
 

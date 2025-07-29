@@ -18,6 +18,13 @@ class RegisterForm(forms.ModelForm):
             
         return user
     
+    def clean_password(self):
+        data = self.cleaned_data["password"]
+        if len(data)<8:
+            raise forms.ValidationError("password length cannot be less than 8")
+        return data
+    
+    
     def clean_password2(self):
         data=super().clean()
         if data.get("password")!=data.get("password2"):

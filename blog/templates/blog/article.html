@@ -8,11 +8,12 @@
 {% endblock%}
 
 {% block content %}
+{% include "blog/includes/navbar.html" %}
 <div class="center-wrapper">
-      <div class="article">
-  <div class="article-title">{{ article.title }}</div>
-  <div class="article-content">{{ article.content }}</div>
-  <div class="article-date">{{ article.date }}</div>
-</div>
+    <div class="article">
+        <div class="article-title">{{ article.title }}</div>
+        <div class="article-content">{{ article.content }}</div>
+        <div class="article-date">{{ article.date }}</div>
+    </div>
 </div>
 {%endblock%}

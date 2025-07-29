@@ -1,0 +1,40 @@
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-btn{
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+}
+
+.logout-btn {
+    background: #e64c4c;
+}
+
+.logout-btn:hover {
+    box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+    background: #e86060
+}
+
+.create-btn {
+    background: #46b51b;
+    text-decoration: none;
+}
+
+.create-btn:hover {
+    box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+    background: #44c114
+}

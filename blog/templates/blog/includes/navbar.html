@@ -1,0 +1,13 @@
+{%load static%}
+
+{%block css_files%}
+    <link rel="stylesheet" href="{% static "blog/includes/navbar.css"%}">
+{%endblock%}
+
+<form method="post" action="{% url 'logout' %}" class="navbar">
+    {% csrf_token %}
+    <button type="submit" class="nav-btn logout-btn">Logout</button>
+    {% if user.is_staff%}
+        <a class="nav-btn create-btn" href="{% url "admin-article-create" %}">Create post</a>
+    {%endif%}
+</form>

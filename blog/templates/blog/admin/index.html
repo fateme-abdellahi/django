@@ -9,19 +9,20 @@
 {% endblock%}
 
 {% block content %}
+  {% include "blog/includes/navbar.html" %}
 
   <div class="blog-container">
-  <div class="blog-title">Personal Blog</div>
+    <div class="blog-title">Personal Blog</div>
 
-  {% for article in articles %}
+    {% for article in articles %}
       <div class="article">
         <div class="article-title">{{ article.title }}</div>
-        <div class="article-actions-content">
-            <a href={% url "admin-article-edit" article.id %}>edit</a>
-            <a href={% url "admin-article-delete" article.id %}>delete</a>
+        <div>
+          <a class="article-action-button article-action-button__edit" href="{% url "admin-article-edit" article.id %}">edit</a>
+          <a class="article-action-button article-action-button__delete" href="{% url "admin-article-delete" article.id %}">delete</a>
         </div>
       </div>
-  {% endfor %}
-</div>
+    {% endfor %}
+  </div>
 
 {%endblock%}

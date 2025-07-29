@@ -8,12 +8,12 @@
 {% endblock%}
 
 {% block content %}
-
+{% include "blog/includes/navbar.html" %}
   <div class="blog-container">
   <div class="blog-title">Personal Blog</div>
 
   {% for article in articles %}
-    <a href={% url "article" article.id %} class="article-link">
+    <a href={% url "view-article" article.id %} class="article-link">
       <div class="article">
         <div class="article-title">{{ article.title }}</div>
         <div class="article-date">{{ article.date }}</div>
